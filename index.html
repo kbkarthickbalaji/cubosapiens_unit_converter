@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit Converter – Cubosapiens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background mesh -->
+  <div class="bg-mesh"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⚙</span>
+        <span class="logo-text">CUBOSAPIENS <span class="logo-sub">/ Unit Converter</span></span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon" id="themeIcon">☀</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Category Tabs -->
+    <nav class="category-nav" id="categoryNav">
+      <button class="cat-btn active" data-cat="length">📏 Length</button>
+      <button class="cat-btn" data-cat="weight">⚖ Weight</button>
+      <button class="cat-btn" data-cat="mass">🔬 Mass</button>
+      <button class="cat-btn" data-cat="temperature">🌡 Temp</button>
+      <button class="cat-btn" data-cat="volume">🧪 Volume</button>
+      <button class="cat-btn" data-cat="area">⬛ Area</button>
+      <button class="cat-btn" data-cat="speed">💨 Speed</button>
+      <button class="cat-btn" data-cat="time">⏱ Time</button>
+      <button class="cat-btn" data-cat="data">💾 Data</button>
+      <button class="cat-btn" data-cat="pressure">🔩 Pressure</button>
+      <button class="cat-btn" data-cat="energy">⚡ Energy</button>
+      <button class="cat-btn" data-cat="frequency">📡 Frequency</button>
+    </nav>
+
+    <!-- Converter Card -->
+    <section class="converter-card">
+      <div class="converter-header">
+        <h2 class="converter-title" id="converterTitle">Length Converter</h2>
+        <p class="converter-desc" id="converterDesc">Convert between metric and imperial length units</p>
+      </div>
+
+      <div class="converter-body">
+        <!-- From -->
+        <div class="field-group">
+          <label class="field-label">From</label>
+          <div class="input-row">
+            <input type="number" class="number-input" id="fromValue" placeholder="Enter value" />
+            <select class="unit-select" id="fromUnit"></select>
+          </div>
+        </div>
+
+        <!-- Swap -->
+        <div class="swap-wrap">
+          <button class="swap-btn" id="swapBtn" title="Swap units">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 16V4m0 0L3 8m4-4l4 4"/><path d="M17 8v12m0 0l4-4m-4 4l-4-4"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- To -->
+        <div class="field-group">
+          <label class="field-label">To</label>
+          <div class="input-row">
+            <input type="number" class="number-input result-input" id="toValue" placeholder="Result" readonly />
+            <select class="unit-select" id="toUnit"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result display -->
+      <div class="result-bar" id="resultBar">
+        <span class="result-text" id="resultText">Enter a value to convert</span>
+        <button class="copy-btn" id="copyBtn" title="Copy result">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          Copy
+        </button>
+      </div>
+
+      <!-- Reset -->
+      <button class="reset-btn" id="resetBtn">↺ Reset</button>
+    </section>
+
+    <!-- Quick Reference Table -->
+    <section class="ref-card" id="refCard">
+      <h3 class="ref-title">Quick Reference</h3>
+      <div class="ref-table-wrap">
+        <table class="ref-table" id="refTable"></table>
+      </div>
+    </section>
+
+    <!-- All Units Grid -->
+    <section class="all-units-card">
+      <h3 class="ref-title">All Units in this Category</h3>
+      <div class="units-grid" id="unitsGrid"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Built for <strong>Cubosapiens</strong> · Unit Converter Tool</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
